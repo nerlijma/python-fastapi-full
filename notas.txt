@@ -1,5 +1,7 @@
 Tutorial: https://www.youtube.com/watch?v=7t2alSnE2-I
 Deploy with: Deta.sh
+TablePlus app: https://tableplus.com/windows
+http://127.0.0.1:8000/docs
 
 > python3 -m venv fastapi-env
 > cd fastapi-env
@@ -7,6 +9,10 @@ Deploy with: Deta.sh
 > pip3 install fastapi
 > python3 -m pip install --upgrade pip
 > pip3 install uvicorn
+> pip3 install SQLAlchemy (latest)
+pip install SQLAlchemy==1.3.24
+pip3 uninstall SQLAlchemy==1.3.24 (con esta no me anduvo, tuve que usar la ultima version)
+pip3 install -r requirements.txt
 
 f-string formatting
 f'mi super string {variable}'
@@ -28,3 +34,18 @@ y luego los parametros son de la forma blog:schemas.Blog
 
 ** SQL Alchemy
 
+NOTA: si no te encuentra las referencias tenes que ir a Python: select interpreter y ver en cual python.exe se instalo. Hace conflicto con el virtual env
+y lo instalado localmente.
+
+*** Response Model
+Con Response model podemos filtrar la salida del response, para no retornar todos los datos
+Se pone el parametro response_model y se crea la clase BlogResponse
+
+@app.get('/blog', response_model=List[schemas.BlogResponse])
+
+class BlogResponse(BaseModel):
+    title: str
+    body: str
+
+    class Config():
+        orm_mode = True
