@@ -1,0 +1,30 @@
+Tutorial: https://www.youtube.com/watch?v=7t2alSnE2-I
+Deploy with: Deta.sh
+
+> python3 -m venv fastapi-env
+> cd fastapi-env
+> fastapi-env\Scripts\activate.bat 
+> pip3 install fastapi
+> python3 -m pip install --upgrade pip
+> pip3 install uvicorn
+
+f-string formatting
+f'mi super string {variable}'
+
+para poder debugear el archivo principal se debe llamar main.py
+
+crea un folder Blog, y adentro un __init__.py vacio.
+Y se crea un main.py adentro. Para arrancar ese main hay que hacer
+
+uvicorn blog.main:app --reload
+
+NOTA: No me anduvo el virtual environment. Lo corro sin Activate y anda.
+
+Schemas: Se puede crear un archivo schemas.py para tener las clases de Entidad
+luego se importan como
+
+from . import schemas
+y luego los parametros son de la forma blog:schemas.Blog
+
+** SQL Alchemy
+
