@@ -68,3 +68,22 @@ creator = relashionsip("User", back_populates="blogs")
 
 * Tabla User tiene una lista de blogs
 blogs = relationship("Blog", back_populates="creator")
+
+*** Module routes
+hacer carpeta routers y adentro __init__.py
+dentro de esa carpeta cada router. blog.py, user.py
+en main.py hay que importar las rutas
+from .routers import user, blog
+app.include_router(blog.router)
+app.include_router(user.router)
+
+blog.py
+
+router = APIRouter()
+y pones dentro todos los metodos get, post, put, etc.
+en vez de @app.get, es @router.get
+from .. import schemas (.. es el directorio anterior, . es el dir actual)
+temporalmente se puede poner funciones en otro archivo y hacer database
+
+
+  
