@@ -49,3 +49,22 @@ class BlogResponse(BaseModel):
 
     class Config():
         orm_mode = True
+
+*** Hashing
+NOTA: A veces da error el import.. hacer requirements.txt varias veces y agarra.
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+hashed_password = pwd_context.hash(request.password)
+
+*** OpenApi Metadata
+Se pueden agrupar los servicios usando tags=["blogs"]
+@app.post('/blog', status_code=status.HTTP_201_CREATED, tags=['blogs'])
+
+*** ORM Relashionsip
+
+* Tabla Blog, tiene un creador
+user_id = Column(Integer, ForeignKey('users.id'))
+creator = relashionsip("User", back_populates="blogs")
+
+* Tabla User tiene una lista de blogs
+blogs = relationship("Blog", back_populates="creator")
