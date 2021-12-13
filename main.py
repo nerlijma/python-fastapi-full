@@ -6,4 +6,4 @@ app = FastAPI()
 
 @app.get('/')
 def get():
-    return {"message": 'site it up'}
+    return {"msg": 'site is up'}
