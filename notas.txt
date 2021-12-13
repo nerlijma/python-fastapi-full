@@ -14,6 +14,20 @@ pip install SQLAlchemy==1.3.24
 pip3 uninstall SQLAlchemy==1.3.24 (con esta no me anduvo, tuve que usar la ultima version)
 pip3 install -r requirements.txt
 
+
+**** Fundamentals
+
+* Constructor con packaging en dict
+    user = UserInDB(**user_dict)
+    construye un pydantic model UserInDB pasando las key y valor como argumentos del constructor
+        UserInDB(
+            username = user_dict["username"],
+            email = user_dict["email"],
+
+
+**** End fundamentals
+
+
 f-string formatting
 f'mi super string {variable}'
 
@@ -85,5 +99,17 @@ en vez de @app.get, es @router.get
 from .. import schemas (.. es el directorio anterior, . es el dir actual)
 temporalmente se puede poner funciones en otro archivo y hacer database
 
+**** Router tags and prefix
+No es necesario poner tag y prefijos a cada endpoint, se p uede hacer asi;
 
+router = APIRouter(
+    tags=["users"],
+    prefix="/user"
+)
+
+***** Dependency injection
+db: Session = Depends(get_db) parece que solo funciona en router functions @router.get.
+Para usarla en funciones comunes hay que pasarla por parametro
+
+***** PACKING and UNPACKING
   

@@ -13,7 +13,7 @@ router = APIRouter()
 
 
 @router.post('/blog', status_code=status.HTTP_201_CREATED, tags=['blogs'])
-def create(request: schemas.CreateBlogDto, db: Session = Depends(get_db)):
+def create(request: schemas.CreateBlogDto, db: Session = Depends(get_db)) -> Blog:
     new_blog = Blog(title=request.title, body=request.body, user_id=1)
     db.add(new_blog)
     db.commit()
