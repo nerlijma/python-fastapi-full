@@ -1,6 +1,8 @@
 Tutorial: https://www.youtube.com/watch?v=7t2alSnE2-I
 
-Deploy with: Deta.sh
+Python online editor: https://code.labstack.com/XEhK3Znl
+
+Deploy with: https://Deta.sh
 
 TablePlus app: https://tableplus.com/windows
 
@@ -27,6 +29,23 @@ OpenApi Docsa: http://127.0.0.1:8000/docs
 > pip3 install -r requirements.txt
 
 ## Fundamentals
+
+### Enums
+
+```
+class Index(str, Enum):
+    FTSE100 = "FTSE 100"
+    SNP500 = "S&P 500"
+    DOWJONE = "Dow Jones"
+
+class IntIndex(Enum):
+    FTSE100 = 1
+    SNP500 = 2
+    DOWJONE = 3
+```
+
+Si en el endpoint pones un parametro de tipo enum, Swagger automaticamente te muestra un combo. (muestra los valores)
+
 
 ### Constructor con packaging en dict
     user = UserInDB(**user_dict)
@@ -158,6 +177,33 @@ list = [1,2,3,4]
 for item in list:
 	print(f'list item: {item}')
 ```
+
+Si dentro de la lista hay un dict, se accede como elemento\[propiedad\]
+Si dentro de la lista hay un obj, se accede como elemento.propiedad
+
+### If else
+
+```
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+```
+
+### list comprehension
+Una forma resumida de hacer 
+
+```
+for x in array:
+```
+
+>*Ejemplo*
+>
+>lista = [{"name": 'nico', 'edad': 2}, {"name": 'nico2', 'edad': 2}]
+>
+>new_lista = [x['name'] for x in lista if 'nico2' in x['name']] 
 
 ### PACKING and UNPACKING
 

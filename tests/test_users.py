@@ -1,4 +1,3 @@
-import pytest
 from fastapi.testclient import TestClient
 from blog.main import app
 from fastapi import status
