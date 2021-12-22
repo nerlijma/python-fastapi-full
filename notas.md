@@ -192,8 +192,8 @@ else:
   print("a is greater than b")
 ```
 
-### list comprehension
-Una forma resumida de hacer 
+### List comprehension
+Una forma resumida de hacer:
 
 ```
 for x in array:
@@ -204,6 +204,20 @@ for x in array:
 >lista = [{"name": 'nico', 'edad': 2}, {"name": 'nico2', 'edad': 2}]
 >
 >new_lista = [x['name'] for x in lista if 'nico2' in x['name']] 
+
+### Dict comprehension
+```
+# Transformar array of dict --> dict con key name
+array_dict = [
+    {'name': 'nico', 'edad': 2, 'fec_nac': datetime.now()},
+    {'name': 'juan', 'edad': 34, 'fec_nac': datetime.now()},
+    {'name': 'carlos', 'edad': 54, 'fec_nac': datetime.now()}
+]
+#print(json.dumps(array_dict, indent=2, sort_keys=True, default=str))
+
+dict_from_array = {item['name']:item for item in array_dict}
+print(json.dumps(dict_from_array, indent=2, sort_keys=True, default=str))
+```
 
 ### PACKING and UNPACKING
 
