@@ -258,3 +258,5 @@ I have a new requirement in feature/feature1
 
 
 this change is not conflicting
+
+This change needs to be merged!
