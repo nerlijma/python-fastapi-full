@@ -253,3 +253,5 @@ id, email = current_user["id"], current_user["email"]
 print(id, email)
 ```
 cambio 1 commiteado (este no lo quiero)
+
+cambio 2 (este lo quiero)
