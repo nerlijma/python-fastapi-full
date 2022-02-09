@@ -252,11 +252,3 @@ current_user = {"id": 2, "email": "nerlijma@gmail.com", "username": "nerlijma"}
 id, email = current_user["id"], current_user["email"]
 print(id, email)
 ```
-
-I also did something! oh my god!
-I have a new requirement in feature/feature1
-
-
-this change is not conflicting
-
-This change needs to be merged!
